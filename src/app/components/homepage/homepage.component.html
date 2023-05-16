@@ -33,6 +33,42 @@
            <img src="\assets\stock-pic.jpg" alt="My Image" class="rounded float-end" style="position: absolute; width: 350px; bottom: 390px; height: 250px;;right:10px;">
       
            <app-currency-converter></app-currency-converter>
+
+           <h1 class="top-h">Top 5 Mutual Funds</h1>
+        <div class="row" > 
+             <div class="col-sm-2"  *ngFor="let data of allTopData"> 
+                <div class="card mb-3" style="left: 4px;">
+                <a href="#" class="card btn  ">
+                 <div class="card-body"> 
+                    <h4 class="card-title"><b>{{data.schemaName}}</b></h4>
+                   <p class="card-text"> 
+                     <span class="text-muted">Current price :</span> ₹{{data.currentPrice}} <br>
+                     <span class="text-muted">Delta :</span> {{data.delta}} %
+                   </p> 
+                   </div> 
+                </a>
+                </div>
+             </div>
+        </div>
+
+           <h1 class="bottom-h">Bottom 5 Mutual Funds</h1>   
+        <div class="row"> 
+            <div class="col-sm-2" *ngFor="let data of allBottomData"> 
+              <div class="card md-3" style="left: 4px;">
+                <a href="#" class="card btn  "> 
+                <div class="card-body"> 
+                   <h4 class="card-title"><b>{{data.schemaName}}</b></h4>
+                  <p class="card-text"> 
+                    <span class="text-muted">Current price :</span> ₹{{data.currentPrice}} <br>
+                    <span class="text-muted">Delta :</span> {{data.delta}} %
+                  </p> 
+                </div> 
+                </a>
+              </div> 
+            </div>
+        </div>
+             
+       
     </main>
     
 </body>

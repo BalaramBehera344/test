@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyconComponent } from './components/currency-converter/currency-converter.component';
+import { MutualFundService } from './services/mutual-fund.service';
+
+
+
 
 
 @NgModule({
@@ -26,9 +30,10 @@ import { CurrencyconComponent } from './components/currency-converter/currency-c
     AppRoutingModule,
     FormsModule,
     HttpClientModule
-   
   ],
-  providers: [],
+
+  providers: [MutualFundService],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

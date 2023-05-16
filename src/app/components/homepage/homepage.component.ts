@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MutualFundService } from 'src/app/services/mutual-fund.service';
 
 
 @Component({
@@ -8,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent  {
   fundsName:any[]=[]
-  constructor() {
+  allTopData:any[]=[]
+  allBottomData:any[]=[]
+  constructor(private api:MutualFundService) {
     
   }
+  ngOnInit(){
+    this.api.getData().subscribe((res)=>{
+      this.allTopData = res;
+      console.log(this.allTopData);
+    })
+
+    this.api.getData1().subscribe((res) =>{
+      this.allBottomData =res;
+      console.log(this.allBottomData);
+    })
+  }
+
+  
+
+
 }
   
 
